@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ever's website</title>
+  <meta charset="UTF-8">
+  <title>GLSL Gallery Demo</title>
+
+  <!-- 引入 GLSL Gallery CSS -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/patriciogonzalezvivo/glslGallery/gh-pages/build/glslGallery.css">
+
+  <!-- 引入 GLSL Gallery JS -->
+  <script type="text/javascript" src="https://cdn.rawgit.com/patriciogonzalezvivo/glslGallery/gh-pages/build/glslGallery.js"></script>
+
   <style>
-  body {
-    font-family: 'Special Elite', 'Courier Prime', monospace;
-    background-color: #f5f0e6; 
-    color: #3a2c1a;            
-    line-height: 1.6;
-    margin: 20px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Special Elite', monospace;
-    color: #4a3f35;
-  }
-
-  a {
-    color: #5a3e2b;
-    text-decoration: underline;
-  }
-</style>
+    body { margin: 0; background: #111; }
+    #glsl-gallery { width: 100vw; height: 100vh; }
+  </style>
 </head>
 <body>
-  <h1>Ever</h1>
-  <p>My name is Ever. I'm a human.</p>
+  <!-- GLSL Gallery 容器 -->
+  <div id="glsl-gallery"></div>
 
+  <script>
+    // 初始化 GLSL Gallery
+    const gallery = new GlslGallery({
+      parent: document.getElementById('glsl-gallery'),
+
+      // 放入你想加载的 shader URL（Book of Shaders player URL）
+      shaders: [
+        'https://thebookofshaders.com/view.php?log=160404125055',
+        'https://thebookofshaders.com/view.php?log=160404130000'
+      ]
+    });
+  </script>
 </body>
 </html>
